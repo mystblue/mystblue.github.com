@@ -1,3 +1,272 @@
 <!DOCTYPE html>
-<p>test
-aaa
+
+<html>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+<meta charset="utf-8">
+<title>Index</title>
+
+<script src="scripts/jquery-2.1.1.min.js"></script>
+<script src="scripts/menu.js"></script>
+<style type="text/css">
+/* @group reset */
+* {margin: 0;padding: 0}
+
+a { text-decoration : none}
+ul, ol { list-style : none}
+img { vertical-align : middle; max-width : 100% }
+
+html {
+  font-family : 'メイリオ', verdana, sans-serif;
+}
+body {
+  font-size : small;
+}
+h1 {
+  font-size     : small;
+  margin-left   : 5px;
+  font-weight   : normal;
+  color         : blue;
+  clear         : both;
+  padding-top   : 3px;
+  margin-bottom : 0px;
+}
+ul {
+  padding-left : 0px;
+}
+ul.horizontal {
+  list-style : none;
+  margin-top : 0px;
+}
+ul.horizontal li {
+  float     : left;
+  padding   : 8px;
+  margin-top    : 6px;
+  margin-left    : 6px;
+  border    : 1px solid silver;
+  display   : block;
+  min-width : 152px;
+  cursor    : pointer;
+}
+ul.horizontal li:hover {
+  background-color : rgb(233, 255, 244);
+  border : 1px solid black;
+}
+a:link {
+  color : blue;
+  text-decoration : none;
+}
+a:visited {
+  color : blue;
+  text-decoration : none;
+}
+a:hover {
+  color : red;
+  text-decoration : underline;
+}
+a:active {
+  color : red;
+  text-decoration : underline;
+}
+</style>
+<script type="text/javascript">
+function jump(url) {
+    window.open(url, "_blank");
+}
+function myopen(page) {
+    $('html, body').animate({scrollTop: 0}, 0);
+    var articles = document.getElementsByTagName("article");
+    var divs = articles[0].childNodes;
+    for (var i = 0; i < divs.length; i++) {
+        var element = divs[i];
+        if (element.nodeName != 'SECTION')
+            continue;
+        var val = element.id == page ? "block" : "none";
+        if (element) element.style.display = val;
+    }
+}
+</script>
+
+<article>
+
+<section>
+<h1 style="display:none;">Menu</h1>
+<h1>News</h1>
+<ul class="horizontal">
+<li onclick="jump('https://feedly.com/#my')">feedly
+<li onclick="jump('http://gunosy.com')">Gunosy
+<li onclick="jump('https://book-checker.appspot.com')">Book Checker
+<li onclick="jump('http://bylines.news.yahoo.co.jp/yamamotoichiro/')">無縫地帯
+<li onclick="jump('http://d.hatena.ne.jp/Chikirin/')">Chikirin日記
+<li onclick="jump('https://cakes.mu/series/3044')">CAKES - 川上量生
+<li onclick="jump('http://b.hatena.ne.jp/viewer')">はてブ
+<li onclick="jump('http://qiita.com/')">Qiita
+</ul>
+
+<br style="clear:both">
+
+<h1>Tool</h1>
+<ul class="horizontal">
+<li onclick="jump('https://www.google.com/calendar/render?pli=1')">カレンダー
+<li onclick="jump('https://mail.google.com/tasks/canvas')">タスク
+<li onclick="jump('https://write-box.appspot.com/')">WriteBox
+<li onclick="jump('https://www.dropbox.com/')">Dropbox
+<li onclick="jump('https://drive.google.com/')">GDrive
+<li onclick="jump('https://keep.google.com/')">Google Keep
+<li onclick="jump('http://app.simplenote.com/')">Simplenote
+<li onclick="jump('http://www.jorudan.co.jp/norikae/cgi/nori.cgi?Sok=1&pg=0&&eki1=%C7%EE%C2%BF&eok1=R-&eki2=%E5%A5%88%E5%A4%9A&eok2=R-&Cway=0&C1=0&C2=0&C3=0&C4=0&C6=2&C18=0&rf=nr&Add=-5&pg=%d')">博多→奈多
+</ul>
+
+<br style="clear:both">
+
+<h1>Communication</h1>
+<ul class="horizontal">
+<li onclick="jump('https://mail.google.com/mail/ca/u/0/#inbox')">Gmail
+<li onclick="jump('https://www.facebook.com/')">Facebook
+<li onclick="jump('https://twitter.com/')">Twitter
+<li onclick="jump('http://jp.mg5.mail.yahoo.co.jp/hkr/login?.rand=d5v77jlfeim33')">Yahoo!メール
+</ul>
+
+<br style="clear:both">
+
+<h1>MyPage</h1>
+<ul class="horizontal">
+<li onclick="myopen('Old')">Old
+<li onclick="jump('http://www.yodobashi.com/index.html')">Yodobashi
+</ul>
+
+<br style="clear:both">
+
+<h1>Management</h1>
+<ul class="horizontal">
+<li onclick="jump('https://dl.dropboxusercontent.com/u/1203890/management/getcomic.html')">gc
+<li onclick="jump('https://store.sonyentertainmentnetwork.com/')">SEN
+<li onclick="jump('https://www.aeon.co.jp/NetBranch/view.do')">イオン
+<li onclick="jump('https://github.com/mystblue')">GitHub
+<li onclick="jump('https://bitbucket.org/')">Bitbucket
+<li onclick="jump('htdocs/management/software.html')">Software
+</ul>
+
+<ul id="menu" style="display:none;">
+</ul>
+</section>
+
+<section>
+<h1>Old</h1>
+<ul class="horizontal">
+<li onclick="myopen('Menu')">Menu
+<li onclick="jump('https://drive.google.com/keep/')">Keep
+<li onclick="jump('http://mystblue.hatenablog.com/')">はてなブログ
+<li onclick="jump('https://github.com/mystblue')">GitHub
+<li onclick="jump('https://bitbucket.org/')">Bitbucket
+<li onclick="jump('http://zaim.net')">Zaim
+<li onclick="jump('https://dl.dropboxusercontent.com/u/1203890/management/getcomic.html')">gc
+<li onclick="jump('https://dl.dropboxusercontent.com/u/1203890/management/mycomic.html')">Comic
+<li onclick="jump('https://dl.dropboxusercontent.com/u/1203890/book/read_log_2013.html')">Comic2013
+<li onclick="jump('https://docs.google.com/spreadsheet/ccc?key=0AkTOKnmgjb6JdENLYmtNeGJtNk1zVU5QZTFxLUs2M0E&usp=drive_web#gid=0')">入手管理
+<li onclick="jump('https://docs.google.com/spreadsheet/ccc?key=0AkTOKnmgjb6JdC1UWkgtRFVHWS1LODhjak9YMU1sWUE&usp=drive_web#gid=0')">漫画管理
+<li onclick="jump('https://docs.google.com/spreadsheet/ccc?key=0AkTOKnmgjb6JdGNqczZ0andweTIwbG1vYnhOdXNULXc&usp=drive_web#gid=0')">読書履歴
+<li onclick="jump('about:appcache-internals')">appinternal
+</ul>
+
+<h1>Check</h1>
+<ul class="horizontal">
+<li onclick="jump('http://qiita.com/')">Qiita
+<li onclick="jump('http://d.hatena.ne.jp/Chikirin/')">Chikirin日記
+<li onclick="jump('http://bylines.news.yahoo.co.jp/yamamotoichiro/')">無縫地帯
+<li onclick="jump('https://book-checker.appspot.com')">Book Checker
+<li onclick="jump('http://dotinstall.com/')">dotinstall
+<li onclick="jump('http://getpocket.com/a/queue/list/')">Pocket
+<li onclick="jump('management/mycomic.html')">mycomic
+<li onclick="jump('http://www.jrkyushu.co.jp/trains/unkou.jsp')">JR九州運行
+<li onclick="jump('clip/2013-10-24.html')">集中
+<li onclick="jump('clip/chikirin/2013-02-03.html')">chikrin
+<li onclick="jump('https://www.aeon.co.jp/NetBranch/view.do')">イオン
+<li onclick="jump('book/got.html')">book
+<li onclick="jump('https://mail.smt.docomo.ne.jp/')">docomo
+<li onclick="jump('http://www.w-nexco.co.jp/traffic_info/')">高速道路
+<!--
+<li onclick="jump('')">
+<li onclick="jump('')">
+-->
+</ul>
+
+<h1>Search</h1>
+<ul class="horizontal">
+<li onclick="jump('http://www.jorudan.co.jp/norikae/cgi/nori.cgi?Sok=1&pg=0&&eki1=%C7%EE%C2%BF&eok1=R-&eki2=%E5%A5%88%E5%A4%9A&eok2=R-&Cway=0&C1=0&C2=0&C3=0&C4=0&C6=2&C18=0&rf=nr&Add=-5&pg=%d')">博多→奈多
+</ul>
+
+<h1>Management</h1>
+<ul class="horizontal">
+<li onclick="jump('htdocs/management/ps_vita.html')">PS Vita
+</ul>
+
+<h1>Games</h1>
+<ul class="horizontal">
+<li onclick="jump('htdocs/Games/dq4/dq4.html')">dq4
+<li onclick="jump('htdocs/Games/dq8/dq8.html')">dq8
+<li onclick="jump('htdocs/Games/dq8/map.html')">dq8map
+<li onclick="jump('Games/puzzdra/puzzdra.html')">puzzdra
+<li onclick="jump('htdocs/games/srw_ux.html')">srw ux
+<li onclick="jump('htdocs/games/srw_z2b/index.html')">srw z2b
+<li onclick="jump('htdocs/games/srw_z2c.html')">srw z2c
+<li onclick="jump('htdocs/games/toukiden.html')">toukiden
+<li onclick="jump('htdocs/games/freedomwars.html')">freewar
+</ul>
+
+<h1>Puzzdra</h1>
+<ul class="horizontal">
+<li onclick="jump('http://mobile.gungho.jp/details/unei.html')">運営
+<li onclick="jump('http://www18.atwiki.jp/pazdra/')">非公式
+</ul>
+
+</section>
+<!--
+<li onclick="jump('about:appcache-internals')">about:appcache-internals
+<h2>Games</h2>
+<ul class="horizontal">
+<li><a href="Games/srw_ux/index.html">srw ux</a></li>
+<li><a href="Games/Persona4/index.html">Persona4</a></li>
+<li><a href="Games/Growlanser/index.html">Growlanser PSP</a></li>
+<li><a href="Games/Growlanser4/index.html">Growlanser 4 OR</a></li>
+<li><a href="Games/NinjaArms/index.html">Ninja Arms</a></li>
+<li><a href="Games/PuzDra/index.html">Puzzle & Dragons</a></li>
+<li><a href="Games/dq7/index.html">dq7</a></li>
+<li><a href="Games/biom3ds/index.html">biom</a></li>
+</ul>
+-->
+<!--
+<script src="http://ccchart.com/js/ccchart.js" charset="utf-8"></script>
+<div align="center">
+　
+<canvas id="hoge"></canvas>
+</div>
+<script>
+var chartdata1 = {
+
+  "config": {
+    "title": "Bar Chart",
+    "subTitle": "Canvasを使ったシンプルなチャートです",
+    "type": "bar",
+    "colorSet": 
+          ["red","#FF9114","#3CB000","#00A8A2","#0036C0","#C328FF","#FF34C0"],
+    "textColor": "#444",
+    "bgGradient": {
+            "direction":"vertical",
+            "from":"#FFFFFF",
+            "to":"#FFFFFF"
+          }
+  },
+
+  "data": [
+    ["年度",2007,2008,2009,2010,2011,2012,2013],
+    ["紅茶",435,332,524,688,774,825,999],
+    ["コーヒー",600,335,584,333,457,788,900],
+    ["ジュース",60,435,456,352,567,678,1260],
+    ["ウーロン",200,123,312,200,402,300,512]
+  ]
+};
+ccchart.init('hoge', chartdata1)
+</script>
+-->
+<br style="clear:both">
+<br>
